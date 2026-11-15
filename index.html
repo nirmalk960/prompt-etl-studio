@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompt ETL Studio — Run it</title>
+  <meta name="description" content="Install Prompt ETL Studio from its container image. The application source is not published." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Figtree:wght@420;560;650&family=IBM+Plex+Mono:wght@420;560&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #101410;
+      --paper: #181e19;
+      --ink: #e8f0e6;
+      --muted: #93a396;
+      --line: #2c3830;
+      --lime: #d6ff4a;
+      --lime-ink: #142000;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(900px 420px at 90% -10%, rgba(214, 255, 74, 0.08), transparent 60%),
+        var(--bg);
+      color: var(--ink);
+      font-family: Figtree, ui-sans-serif, system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    a { color: var(--lime); }
+    header, main, footer { width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: baseline; padding: 28px 0 8px; }
+    .mark { font-weight: 650; letter-spacing: -0.03em; }
+    nav { display: flex; gap: 18px; font-size: 14px; }
+    nav a { color: var(--muted); text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+    .kicker {
+      display: inline-block;
+      margin: 36px 0 14px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--lime);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 520;
+      font-size: clamp(40px, 7vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+    }
+    .lede { max-width: 40rem; color: var(--muted); font-size: 18px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 32px 0 8px; }
+    .row div { border-top: 1px solid var(--line); padding-top: 12px; }
+    .row strong { display: block; font-size: 14px; }
+    .row span { color: var(--muted); font-size: 14px; }
+    section { margin: 56px 0; }
+    h2 {
+      margin: 0 0 12px;
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 520;
+      font-size: 32px;
+      letter-spacing: -0.03em;
+    }
+    p { margin: 0 0 14px; }
+    .cmd {
+      position: relative;
+      margin: 16px 0;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .cmd header {
+      width: auto;
+      margin: 0;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    pre {
+      margin: 0;
+      padding: 16px 14px 18px;
+      overflow-x: auto;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    button.copy {
+      border: 0;
+      background: var(--lime);
+      color: var(--lime-ink);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font: 650 12px Figtree, sans-serif;
+      cursor: pointer;
+    }
+    ul { margin: 8px 0 0; padding: 0; list-style: none; }
+    li { padding: 10px 0; border-top: 1px solid var(--line); }
+    li b { font-weight: 650; }
+    li span { color: var(--muted); }
+    footer {
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 680px) {
+      .row { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="mark">Prompt ETL Studio</div>
+    <nav>
+      <a href="#run">Run</a>
+      <a href="#sign-in">Sign in</a>
+      <a href="#use">Use it</a>
+    </nav>
+  </header>
+  <main>
+    <p class="kicker">Closed source · image + install guide</p>
+    <h1>A visual ETL workbench, in one container.</h1>
+    <p class="lede">
+      Build pipelines on a canvas: filters, joins, quality checks, predictions, and dashboards.
+      When a step is easier to describe than to configure, a local model can write it.
+      You run the published image. The application source is not in this repository.
+    </p>
+    <div class="row">
+      <div><strong>Image</strong><span>ghcr.io/nirmalk960/prompt-etl</span></div>
+      <div><strong>Version</strong><span>0.2.1</span></div>
+      <div><strong>Open</strong><span>http://localhost:8080</span></div>
+    </div>
+
+    <section id="run">
+      <h2>Run it</h2>
+      <p>Docker Desktop or any Docker engine is enough. The container brings its own database, queue, and files. Your datasets stay in a volume named <code>prompt-etl-data</code>.</p>
+      <div class="cmd">
+        <header>
+          <span>terminal</span>
+          <button class="copy" type="button" data-copy="run">Copy</button>
+        </header>
+        <pre id="run">docker pull ghcr.io/nirmalk960/prompt-etl:0.2.1
+
+docker run -d --name prompt-etl \
+  -p 8080:8080 \
+  -v prompt-etl-data:/data \
+  --add-host=host.docker.internal:host-gateway \
+  ghcr.io/nirmalk960/prompt-etl:0.2.1</pre>
+      </div>
+      <p>Then open <a href="http://localhost:8080">http://localhost:8080</a>. Give the container more memory with <code>-m 16g</code> when the machine has it; the same image picks a larger engine as RAM grows.</p>
+    </section>
+
+    <section id="sign-in">
+      <h2>Sign in</h2>
+      <p>The first start writes an access token onto the volume. The app asks for it in Settings. Each install has its own token. It is not a shared password published on this page.</p>
+      <div class="cmd">
+        <header>
+          <span>read the token</span>
+          <button class="copy" type="button" data-copy="token">Copy</button>
+        </header>
+        <pre id="token">docker exec prompt-etl cat /data/access_token</pre>
+      </div>
+      <p>Paste that value into <b>Settings → Access token</b> and save. Removing the container does not delete the token or your data. <code>docker volume rm prompt-etl-data</code> does.</p>
+    </section>
+
+    <section id="use">
+      <h2>What you can do</h2>
+      <ul>
+        <li><b>Shape tables.</b> <span>Filter, sort, dedupe, join, union, pivot, aggregate, window calculations, and type changes. Each box has a settings form.</span></li>
+        <li><b>Check quality.</b> <span>Profile a dataset, or validate rules and stop the pipeline when rows fail.</span></li>
+        <li><b>Predict.</b> <span>Regression, classification, clustering, anomaly scores, and a time-series forecast. Results land as their own dataset.</span></li>
+        <li><b>Look at it.</b> <span>A dashboard box opens a table and charts in a new tab. Export the current result as CSV, JSON, Parquet, or text.</span></li>
+        <li><b>Describe a step.</b> <span>Prompt mode and the Custom box send plain language to a model running on your machine. Configure mode does not need one.</span></li>
+      </ul>
+    </section>
+
+    <section id="model">
+      <h2>Optional local model</h2>
+      <p>Install <a href="https://ollama.com">Ollama</a> on the host, not inside the container, so it can use the GPU. The image already looks for it at <code>host.docker.internal:11434</code>.</p>
+      <div class="cmd">
+        <header>
+          <span>on the host</span>
+          <button class="copy" type="button" data-copy="model">Copy</button>
+        </header>
+        <pre id="model-cmd">ollama pull qwen2.5-coder:7b</pre>
+      </div>
+      <p>Use <code>qwen2.5-coder:14b</code> from about 14 GB of RAM, and <code>:32b</code> from about 28 GB. Pass <code>-e OLLAMA_MODEL=qwen2.5-coder:14b</code> on <code>docker run</code> when you pick a larger one. Set <code>-e OLLAMA_DISABLE=1</code> to keep every step on the built-in forms.</p>
+    </section>
+
+    <section id="keep">
+      <h2>Day to day</h2>
+      <div class="cmd">
+        <header><span>terminal</span></header>
+        <pre>docker logs -f prompt-etl
+docker restart prompt-etl
+docker rm -f prompt-etl</pre>
+      </div>
+      <p>Restarting keeps the volume. After <code>docker rm</code>, start again with the same <code>docker run</code> and the same volume name to pick up where you left off.</p>
+    </section>
+  </main>
+  <footer>
+    Prompt ETL Studio is not open source. This repository is the public install guide.
+    The application source is published nowhere on GitHub.
+    Image: <code>ghcr.io/nirmalk960/prompt-etl:0.2.1</code>
+  </footer>
+  <script>
+    document.querySelectorAll("button.copy").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const id = btn.getAttribute("data-copy");
+        const node = id === "model" ? document.getElementById("model-cmd") : document.getElementById(id);
+        await navigator.clipboard.writeText(node.innerText.trim());
+        const prev = btn.textContent;
+        btn.textContent = "Copied";
+        setTimeout(() => { btn.textContent = prev; }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>
