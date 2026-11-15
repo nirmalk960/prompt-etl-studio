@@ -1,8 +1,6 @@
 # Prompt ETL Studio
 
-Public install guide for the Prompt ETL Studio container. This repository does not contain the application source.
-
-The designed page is published with GitHub Pages from `index.html`.
+Install guide for the Prompt ETL Studio container. The designed page is published with GitHub Pages from `index.html`.
 
 ## Run
 
@@ -39,7 +37,3 @@ The container looks for Ollama at `http://host.docker.internal:11434`.
 ## Issues
 
 Bug reports and feature requests: https://github.com/nirmalk960/prompt-etl-studio/issues
-
-## License
-
-Prompt ETL Studio is not open source. No license is granted to the application. This repository is documentation for running the published image.

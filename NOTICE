@@ -1,8 +1,4 @@
-Prompt ETL Studio is closed-source software.
+This repository is the install guide for Prompt ETL Studio.
 
-This repository contains an install guide only. It does not contain the
-application source, and it does not grant a license to copy, modify, or
-redistribute the software.
-
-The runnable product is the container image
-ghcr.io/nirmalk960/prompt-etl
+It does not contain the application source. The runnable product is the
+container image ghcr.io/nirmalk960/prompt-etl.
